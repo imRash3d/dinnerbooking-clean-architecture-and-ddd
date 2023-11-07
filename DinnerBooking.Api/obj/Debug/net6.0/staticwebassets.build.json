@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "cWUhFvwQ2MoY4KDmAYgDo/y5h2S3wep/BTCeMDPhT4c=",
+  "Source": "DinnerBooking.Api",
+  "BasePath": "_content/DinnerBooking.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

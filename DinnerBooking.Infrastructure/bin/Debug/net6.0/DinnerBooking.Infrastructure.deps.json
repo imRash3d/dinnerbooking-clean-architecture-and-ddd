@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DinnerBooking.Infrastructure/1.0.0": {
+        "dependencies": {
+          "DinnerBooking.Application": "1.0.0"
+        },
+        "runtime": {
+          "DinnerBooking.Infrastructure.dll": {}
+        }
+      },
+      "DinnerBooking.Application/1.0.0": {
+        "dependencies": {
+          "DinnerBooking.Domain": "1.0.0"
+        },
+        "runtime": {
+          "DinnerBooking.Application.dll": {}
+        }
+      },
+      "DinnerBooking.Domain/1.0.0": {
+        "runtime": {
+          "DinnerBooking.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DinnerBooking.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DinnerBooking.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DinnerBooking.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
