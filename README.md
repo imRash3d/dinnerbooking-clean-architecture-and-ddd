@@ -1,1 +1,1 @@
-# dinnerbooking-clean-architecture-and-ddd
+# Dinner Booking ASP.NET 6 REST API Following CLEAN ARCHITECTURE & DDD
