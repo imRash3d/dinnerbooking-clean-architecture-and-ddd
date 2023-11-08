@@ -8,7 +8,7 @@ namespace DinnerBooking.Contracts.Authentication;
 
 public record AuthResponse(
 
-    Guid Id,
+    string ItemId,
     string FirstName,
     string LastName,
     string Email,

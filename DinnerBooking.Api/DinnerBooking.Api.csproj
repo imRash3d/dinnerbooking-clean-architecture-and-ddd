@@ -16,4 +16,8 @@
     <ProjectReference Include="..\DinnerBooking.Infrastructure\DinnerBooking.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ServiceCollectionExtensions\" />
+  </ItemGroup>
+
 </Project>

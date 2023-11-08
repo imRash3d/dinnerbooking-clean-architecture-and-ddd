@@ -1,8 +1,10 @@
 using DinnerBooking.Api.ServiceCollectionExtensions;
+using DinnerBooking.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
-    builder.Services.AddServices(); // Call DI
+    builder.Services.AddInfrastructure(); // Call DI
+    builder.Services.AddApplication(); // Call DI
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();

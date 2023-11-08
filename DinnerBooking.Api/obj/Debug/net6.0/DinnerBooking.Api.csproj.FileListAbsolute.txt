@@ -33,3 +33,9 @@ G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\DinnerBookin
 G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\DinnerBooking.Domain.pdb
 G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\DinnerBooking.Infrastructure.dll
 G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\DinnerBooking.Infrastructure.pdb
+G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
