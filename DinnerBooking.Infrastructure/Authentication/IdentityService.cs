@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,43 +14,43 @@ namespace DinnerBooking.Infrastructure.Authentication
     public class IdentityService : IIdentityService
     {
 
-        public Task<string> GenerateToken(string userId, string firstName, string lastName)
+
+        public Task<string> GenerateToken(string userId, string email, string firstName, string lastName)
         {
             try
             {
                 var claims = new List<Claim>
                     {
-                        new Claim(JwtRegisteredClaimNames.Sub, userId),
-                        new Claim(JwtRegisteredClaimNames.FamilyName, firstName),
-                        new Claim(JwtRegisteredClaimNames.GivenName, lastName),
-                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                        new Claim(JwtRegisteredClaimNames.Sub, Guid.NewGuid().ToString()),
+                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                        new Claim("display_name", $"{firstName} {lastName}"),
+                        new Claim("user_id", userId),
+                        new Claim("email", email),
                     };
 
+
+                var key = new SymmetricSecurityKey(IdentityHelper.GeneratekeyBytes("secret-key"));
                 var credentials = new SigningCredentials(
-                    new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes("secret-key")
-                    ),
-                    SecurityAlgorithms.HmacSha512Signature
+                    key,
+                    SecurityAlgorithms.HmacSha256
                 );
 
-                var tokenDescriptor = new SecurityTokenDescriptor
-                {
-                    Subject = new ClaimsIdentity(claims),
-                    Expires = DateTime.Now.AddDays(7),
-                    SigningCredentials = credentials
-                };
+                var tokenDescriptor = new JwtSecurityToken
+               (
+                    issuer:"DXBooking",
+                    claims : claims,
+                    expires : DateTime.Now.AddDays(7),
+                    signingCredentials : credentials
+
+                );
 
                 var tokenHandler = new JwtSecurityTokenHandler();
-                var token = tokenHandler.CreateToken(tokenDescriptor);
-                return Task.FromResult(tokenHandler.WriteToken(token));
+                return Task.FromResult(tokenHandler.WriteToken(tokenDescriptor));
             }
             catch (Exception ex)
             {
-                // Handle the exception, log it, and return an error message or null
-                // For example:
-                // LogException(ex);
-                // return Task.FromResult<string>(null); // or return Task.FromResult("Error message");
-                // Make sure to handle the exception as appropriate for your application.
+
+                Console.WriteLine(ex.Message);
             }
             return Task.FromResult(string.Empty);
 

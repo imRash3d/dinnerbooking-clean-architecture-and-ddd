@@ -45,12 +45,12 @@ namespace DinnerBooking.Application.Services.AuthenticationService
                 {
                     throw new NotImplementedException("Email not exist ");
                 }
-               
-                if(CheckUserPassword(user, password) is false)
+
+                if (CheckUserPassword(user, password) is false)
                 {
                     throw new NotImplementedException("Password not match  ");
                 }
-                string token = await _identityService.GenerateToken(user.ItemId, user.FirstName, user.LastName);
+                string token = await _identityService.GenerateToken(user.ItemId, user.Email, user.FirstName, user.LastName);
                 var response = new AuthResult(
                  user.ItemId,
                  user.FirstName,
@@ -74,6 +74,7 @@ namespace DinnerBooking.Application.Services.AuthenticationService
             {
 
                 // check email exist 
+                
                 var userExist = await _userRepository.GetUserByEmail(email);
                 if (userExist is not null)
                 {
@@ -93,7 +94,7 @@ namespace DinnerBooking.Application.Services.AuthenticationService
                 await _userRepository.CreateUser(user);
 
                 // create token 
-                string token = await _identityService.GenerateToken(user.ItemId, user.FirstName, user.LastName);
+                string token = await _identityService.GenerateToken(user.ItemId, user.Email, user.FirstName, user.LastName);
 
                 var response = new AuthResult(
 
