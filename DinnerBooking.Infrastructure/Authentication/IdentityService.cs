@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace DinnerBooking.Infrastructure.Authentication
 {
-    public class IdentityService : IIdentityService
+    internal sealed class IdentityService : IIdentityService
     {
 
 
-        public Task<string> GenerateToken(string userId, string email, string firstName, string lastName)
+        public string GenerateToken(string userId, string email, string firstName, string lastName)
         {
             try
             {
@@ -27,7 +27,6 @@ namespace DinnerBooking.Infrastructure.Authentication
                         new Claim("user_id", userId),
                         new Claim("email", email),
                     };
-
 
                 var key = new SymmetricSecurityKey(IdentityHelper.GeneratekeyBytes("secret-key"));
                 var credentials = new SigningCredentials(
@@ -45,14 +44,14 @@ namespace DinnerBooking.Infrastructure.Authentication
                 );
 
                 var tokenHandler = new JwtSecurityTokenHandler();
-                return Task.FromResult(tokenHandler.WriteToken(tokenDescriptor));
+                return tokenHandler.WriteToken(tokenDescriptor);
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine(ex.Message);
             }
-            return Task.FromResult(string.Empty);
+            return string.Empty;
 
         }
 

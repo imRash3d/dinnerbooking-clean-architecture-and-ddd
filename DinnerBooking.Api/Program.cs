@@ -1,8 +1,11 @@
+
+using DinnerBooking.Api.Middlewares;
 using DinnerBooking.Api.ServiceCollectionExtensions;
 using DinnerBooking.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
+    builder.Services.AddTransient<ErrorHandlingMiddleware>();
     builder.Services.AddInfrastructure(); // Call DI
     builder.Services.AddApplication(); // Call DI
     builder.Services.AddControllers();
@@ -19,8 +22,8 @@ var app = builder.Build();
         app.UseSwagger();
         app.UseSwaggerUI();
     }
-
-    app.UseAuthorization();
+    app.UseMiddleware<ErrorHandlingMiddleware>();
+   // app.UseAuthorization();
 
     app.MapControllers();
 

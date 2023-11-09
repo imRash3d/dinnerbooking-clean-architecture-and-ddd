@@ -8,6 +8,6 @@ namespace DinnerBooking.Application.Common.Authentication
 {
     public interface IIdentityService
     {
-        Task<string> GenerateToken(string userId, string email, string firstName, string lastName);
+        string GenerateToken(string userId, string email, string firstName, string lastName);
     }
 }
