@@ -1,6 +1,6 @@
 ﻿using DinnerBooking.Application.Common.Interfaces.Persistance;
 using DinnerBooking.Domain.Entities;
-using DinnerBooking.Infrastructure.Adapter;
+using DinnerBooking.Infrastructure.Abstraction;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace DinnerBooking.Infrastructure.Persistance
 {
-    public class UserRepository : IUserRepository
+    internal sealed class UserRepository : IUserRepository
     {
         private readonly IRepository _repository;
         public UserRepository(IRepository repository)
         {
             _repository = repository;
         }
-        public async Task CreateUser(User user)
+        public async Task SaveUser(User user)
         {
             await _repository.SaveAsync(user);
            

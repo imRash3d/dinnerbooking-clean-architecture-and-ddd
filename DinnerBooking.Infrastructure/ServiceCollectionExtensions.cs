@@ -1,6 +1,6 @@
 ﻿using DinnerBooking.Application.Common.Authentication;
 using DinnerBooking.Application.Common.Interfaces.Persistance;
-using DinnerBooking.Infrastructure.Adapter;
+using DinnerBooking.Infrastructure.Abstraction;
 using DinnerBooking.Infrastructure.Authentication;
 using DinnerBooking.Infrastructure.Persistance;
 using Microsoft.Extensions.DependencyInjection;

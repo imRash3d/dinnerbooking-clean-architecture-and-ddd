@@ -7,7 +7,7 @@ namespace DinnerBooking.Application.Common.Interfaces.Persistance
     {
         Task<User> GetUserById(string userId);
         Task<User> GetUserByEmail(string email);
-        Task CreateUser(User user);
+        Task SaveUser(User user);
         Task UpdateUser(User user);
         Task DeleteUser(string userId);
     }

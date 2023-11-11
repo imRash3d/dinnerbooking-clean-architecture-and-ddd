@@ -81,17 +81,10 @@ namespace DinnerBooking.Application.Services.AuthenticationService
                     throw new NotImplementedException("Email already exist ");
                 }
 
-                using var hmac = new HMACSHA512();
-                var user = new User()
-                {
-                    FirstName = firstName,
-                    LastName = lastName,
-                    Email = email,
-                    PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password)),
-                    PasswordSalt = hmac.Key
-                };
+                UserFactory userFactory = new UserFactory();
+                var user = userFactory.CreateUser(firstName, lastName, email, password);
 
-                await _userRepository.CreateUser(user);
+                await _userRepository.SaveUser(user);
 
                 // create token 
                 string token =  _identityService.GenerateToken(user.ItemId, user.Email, user.FirstName, user.LastName);
