@@ -39,3 +39,6 @@ G:\Backend Project\DinnerBooking\DinnerBooking.Api\obj\Debug\net6.0\refint\Dinne
 G:\Backend Project\DinnerBooking\DinnerBooking.Api\obj\Debug\net6.0\DinnerBooking.Api.pdb
 G:\Backend Project\DinnerBooking\DinnerBooking.Api\obj\Debug\net6.0\DinnerBooking.Api.genruntimeconfig.cache
 G:\Backend Project\DinnerBooking\DinnerBooking.Api\obj\Debug\net6.0\ref\DinnerBooking.Api.dll
+G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\MediatR.dll
+G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\MediatR.Contracts.dll
+G:\Backend Project\DinnerBooking\DinnerBooking.Api\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

@@ -1,35 +1,33 @@
-﻿using DinnerBooking.Application.Services.AuthenticationService;
-using DinnerBooking.Contracts.Authentication;
+﻿using DinnerBooking.Api.Abstraction;
+using DinnerBooking.Application.Services.Authentication.Commands.Login;
+using DinnerBooking.Contracts.Common;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DinnerBooking.Api.Controllers
 {
     [ApiController]
     [Route("auth")]
-    public class AuthenticationController : ControllerBase
+    public sealed class AuthenticationController : ApiController
     {
-        private readonly IAuthenticationService _authenticationService;
-        public AuthenticationController(
-
-            IAuthenticationService authenticationService
-
-
-            )
+     
+        public AuthenticationController(ISender  sender):base(sender)
         {
-            _authenticationService = authenticationService;
+           
         }
+
+
+
         [Route("register")]
-        public IActionResult Register(RegisterRequest request)
+        public Task<CommandResponse> Register([FromBody] RegisterCommand command)
         {
-            var response = _authenticationService.Register(request.FirstName, request.LastName, request.Email, request.Password);
-            return Ok(response);
+           return _sender.Send(command);
         }
 
         [Route("login")]
-        public IActionResult Login(LoginRequest request)
+        public Task<CommandResponse> Login([FromBody] LoginCommand command)
         {
-            var response = _authenticationService.login(request.Email, request.Password);
-            return Ok(response);
+            return _sender.Send(command);
         }
     }
 }

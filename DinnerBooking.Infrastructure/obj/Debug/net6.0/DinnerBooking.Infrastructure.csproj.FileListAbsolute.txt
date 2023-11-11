@@ -15,3 +15,5 @@ G:\Backend Project\DinnerBooking\DinnerBooking.Infrastructure\obj\Debug\net6.0\D
 G:\Backend Project\DinnerBooking\DinnerBooking.Infrastructure\obj\Debug\net6.0\refint\DinnerBooking.Infrastructure.dll
 G:\Backend Project\DinnerBooking\DinnerBooking.Infrastructure\obj\Debug\net6.0\DinnerBooking.Infrastructure.pdb
 G:\Backend Project\DinnerBooking\DinnerBooking.Infrastructure\obj\Debug\net6.0\ref\DinnerBooking.Infrastructure.dll
+G:\Backend Project\DinnerBooking\DinnerBooking.Infrastructure\bin\Debug\net6.0\DinnerBooking.Contracts.dll
+G:\Backend Project\DinnerBooking\DinnerBooking.Infrastructure\bin\Debug\net6.0\DinnerBooking.Contracts.pdb

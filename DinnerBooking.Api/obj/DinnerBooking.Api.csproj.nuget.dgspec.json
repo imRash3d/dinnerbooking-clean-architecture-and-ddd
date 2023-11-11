@@ -51,6 +51,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -104,6 +108,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "G:\\Backend Project\\DinnerBooking\\DinnerBooking.Contracts\\DinnerBooking.Contracts.csproj": {
+                "projectPath": "G:\\Backend Project\\DinnerBooking\\DinnerBooking.Contracts\\DinnerBooking.Contracts.csproj"
+              },
               "G:\\Backend Project\\DinnerBooking\\DinnerBooking.Domain\\DinnerBooking.Domain.csproj": {
                 "projectPath": "G:\\Backend Project\\DinnerBooking\\DinnerBooking.Domain\\DinnerBooking.Domain.csproj"
               }
@@ -120,6 +127,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[7.0.0, )"
