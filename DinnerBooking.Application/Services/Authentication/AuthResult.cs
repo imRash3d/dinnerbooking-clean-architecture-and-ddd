@@ -8,11 +8,15 @@ namespace DinnerBooking.Application.Services.AuthenticationService
 {
     public record AuthResult(
 
-        string Id,
+        AuthResponse? Response,
+        string? ErroMessage
+
+        );
+
+    public sealed record AuthResponse (
+         string Id,
         string FirstName,
         string LastName,
         string Email,
-        string Token
-
-        );
+        string Token);
 }

@@ -11,11 +11,17 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
 
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+
+    <PackageReference Include="Serilog" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DinnerBooking.Contracts\DinnerBooking.Contracts.csproj" />
     <ProjectReference Include="..\DinnerBooking.Domain\DinnerBooking.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DinnerMenu\Queries\" />
   </ItemGroup>
 
 </Project>

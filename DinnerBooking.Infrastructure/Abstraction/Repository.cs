@@ -34,10 +34,7 @@ internal sealed class Repository : IRepository
         throw new NotImplementedException();
     }
 
-    public IQueryable<T> GetItemsAsync<T>()
-    {
-        throw new NotImplementedException();
-    }
+   
 
     public Task SaveAsync<T>(T data)
     {
@@ -45,6 +42,11 @@ internal sealed class Repository : IRepository
     }
 
     public void UpdateAsync<T>(Expression<Func<T, bool>> dataFilters, T data)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<IQueryable<T>> IRepository.GetItemsAsync<T>()
     {
         throw new NotImplementedException();
     }

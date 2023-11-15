@@ -15,8 +15,7 @@ public interface IRepository
     Task<long> CountAsync<T>(Expression<Func<T, bool>> dataFilters);
     Task<T> GetItemAsync<T>(Expression<Func<T, bool>> dataFilters);
     Task<IQueryable<T>> GetItemsAsync<T>(Expression<Func<T, bool>> dataFilters);
-    IQueryable<T> GetItemsAsync<T>();
+    Task<IQueryable<T>> GetItemsAsync<T>();
     Task SaveAsync<T>(T data);
-   
     void UpdateAsync<T>(Expression<Func<T, bool>> dataFilters, T data);
 }

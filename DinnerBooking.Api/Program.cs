@@ -2,6 +2,7 @@
 using DinnerBooking.Api.Middlewares;
 using DinnerBooking.Api.ServiceCollectionExtensions;
 using DinnerBooking.Infrastructure;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 {
@@ -11,6 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
+    builder.Host.UseSerilog((context, configuration)=>
+    configuration.ReadFrom.Configuration(context.Configuration)
+    );
 }
 
 
@@ -25,6 +29,7 @@ var app = builder.Build();
     app.UseMiddleware<ErrorHandlingMiddleware>();
    // app.UseAuthorization();
 
+    app.UseSerilogRequestLogging(); 
     app.MapControllers();
 
     app.Run();

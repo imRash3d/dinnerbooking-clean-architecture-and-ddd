@@ -9,7 +9,7 @@ namespace DinnerBooking.Api.ServiceCollectionExtensions
         public static IServiceCollection AddApplication(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddMediatR(typeof(ServiceCollectionExtensions).Assembly);
-            serviceCollection.AddSingleton<IAuthenticationService, AuthenticationService>();
+            serviceCollection.AddScoped<IAuthenticationService, AuthenticationService>();
             return serviceCollection;
         }
     }
